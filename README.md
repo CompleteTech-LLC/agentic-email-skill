@@ -74,7 +74,7 @@ Rendered templates are drafts. Replace placeholders with verified prospect, clie
 
 ![Proposal cover email preview](assets/examples/example.png)
 
-Preview converted from generated artifact: [example.md](assets/examples/example.md).
+Full-document preview converted from generated artifact: [example.md](assets/examples/example.md).
 
 **Proposal cover email: Pilot scope ready for review**
 
