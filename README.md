@@ -70,6 +70,27 @@ python3 scripts/render_email.py \
 
 Rendered templates are drafts. Replace placeholders with verified prospect, client, offer, proof, and timing details before use.
 
+## Example
+
+![Proposal cover email preview](assets/examples/example.png)
+
+**Proposal cover email: Pilot scope ready for review**
+
+```bash
+python3 scripts/render_email.py \
+  --template proposal-sent \
+  --var prospect_name="Jordan" \
+  --var company="Northstar Support" \
+  --var workflow="support triage pilot" \
+  --var next_step="review the pilot scope and confirm whether the approval gate matches your process"
+```
+
+Example draft:
+
+> Subject: Support triage pilot scope for review
+>
+> Jordan, I attached the pilot scope for the reviewed support triage workflow. The key design choice is the approval gate: the agent prepares classification notes and reply drafts, but your support lead approves anything customer-facing. If that matches your process, the next step is confirming the sample ticket set and pilot reviewers.
+
 ## Brand Notes
 
 Use a direct, concrete, low-hype tone. Pitch agentic development as bounded workflow implementation with human approval gates, evaluation examples, logging, monitoring, and handoff documentation. Do not invent client proof, metrics, regulated-use assurances, or legal claims.
