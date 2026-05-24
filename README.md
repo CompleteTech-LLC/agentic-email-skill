@@ -85,18 +85,18 @@ Full-document **branded PDF** rendered from the generated artifact: [example.pdf
 - Drafts only — verify recipient and routing before sending.
 - No fabricated metrics or client names.
 
-Generate the branded PDF (artifacts are delivered as PDFs, not raw Markdown):
+Generate it in one command (branded PDF + Markdown, like the contract skill):
 
 ```bash
 pip install -r requirements.txt
-# 1) Draft the artifact (optionally start from a catalog template)
-python3 scripts/render_email.py --template cold-operations-bottleneck > assets/examples/example.md
-# 2) Render the branded CompleteTech PDF (+ optional PNG preview)
-python3 scripts/render_pdf.py --markdown assets/examples/example.md \
+python3 scripts/render_email.py --template cold-operations-bottleneck \
   --out assets/examples/example.pdf --png assets/examples/example.png \
-  --logo assets/logo.png --title "Outbound Email Sequence" \
-  --doc-type "EMAIL DRAFTS — VERIFY BEFORE SENDING" --subtitle "Prospect: <b>Northwind Trading Co.</b>" --meta "SEQUENCE=PRO-OUT-014" --meta "STAGE=Cold outreach" --meta "STEPS=3 emails"
+  --markdown-out assets/examples/example.md \
+  --logo assets/logo.png --title "Outbound Email Sequence" --doc-type "EMAIL DRAFTS — VERIFY BEFORE SENDING" \
+  --subtitle "Prospect: <b>Northwind Trading Co.</b>" --meta "SEQUENCE=PRO-OUT-014" --meta "STAGE=Cold outreach"
 ```
+
+The committed `example.{md,pdf,png}` use curated, realistic demonstration data for the Northwind Trading Co. support-triage pilot; pass `--var key=value` to fill template placeholders with your own facts.
 
 ## Brand Notes
 
