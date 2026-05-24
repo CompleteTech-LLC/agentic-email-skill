@@ -74,6 +74,8 @@ Rendered templates are drafts. Replace placeholders with verified prospect, clie
 
 ![Proposal cover email preview](assets/examples/example.png)
 
+Preview converted from generated artifact: [example.md](assets/examples/example.md).
+
 **Proposal cover email: Pilot scope ready for review**
 
 ```bash
@@ -82,7 +84,8 @@ python3 scripts/render_email.py \
   --var prospect_name="Jordan" \
   --var company="Northstar Support" \
   --var workflow="support triage pilot" \
-  --var next_step="review the pilot scope and confirm whether the approval gate matches your process"
+  --var next_step="review the pilot scope and confirm whether the approval gate matches your process" \
+  > assets/examples/example.md
 ```
 
 Example draft:
