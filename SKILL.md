@@ -121,3 +121,19 @@ python3 scripts/render_email.py --template cold-problem-pilot --var prospect_nam
 ```
 
 If a user needs polished, context-aware copy, use the references and rewrite the rendered draft rather than returning raw placeholders.
+
+## Rendering to a Branded PDF
+
+Artifacts from this skill are delivered as branded CompleteTech LLC **PDF** documents, not raw Markdown. After drafting the artifact text (optionally starting from a catalog template), render it with the bundled generator:
+
+```bash
+pip install -r requirements.txt
+python3 scripts/render_pdf.py \
+  --markdown artifact.md --out artifact.pdf --png artifact.png \
+  --logo assets/logo.png \
+  --title "Outbound Email Sequence" --doc-type "EMAIL DRAFTS — VERIFY BEFORE SENDING" \
+  --subtitle "Prepared for <b>Client Name</b>" \
+  --meta "DOCUMENT NO.=PRO-OUT-014" --meta "DATE=2026-05-24"
+```
+
+`scripts/render_pdf.py` applies the shared CompleteTech branding (logo, cover page, letterhead band, watermark, footer) and supports a Markdown subset: `#`/`##`/`###` headings, paragraphs, `-` bullet lists, tables, `>` callouts, `**bold**`, and `[PAGE_BREAK]`. It requires `reportlab`; the optional `--png` preview montage requires `pypdfium2` and `pillow`. See `assets/examples/` for a rendered example.

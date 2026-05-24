@@ -17,8 +17,8 @@ Part of the CompleteTech LLC agentic services skill library. This skill drafts m
 - Homepage: https://github.com/CompleteTech-LLC/agentic-email-skill
 - README: https://github.com/CompleteTech-LLC/agentic-email-skill#readme
 - Runtime binaries: `python3`
-- Python packages: none
-- Intended registry/discovery tags: `latest`, `complete-tech`, `codex-skill`, `agentic-development`, `agentic-workflows`, `email`, `outreach`, `sales`
+- Python packages: `reportlab>=4.0` (optional PNG preview: `pypdfium2`, `pillow`)
+- Intended registry/discovery tags: `latest`, `complete-tech`, `codex-skill`, `agentic-development`, `agentic-workflows`, `email`, `outreach`, `sales`, `pdf`, `pdf-generator`
 - License: repository code, templates, and documentation use MIT; ClawHub publishing is intentionally skipped for now.
 - Brand assets: CompleteTech LLC names, logos, seals, and brand assets are reserved; see `BRAND_ASSETS.md`.
 
@@ -55,6 +55,8 @@ flowchart LR
 - `references/sequence-blueprints.md` - recommended multi-email cadences.
 - `references/positioning.md` - CompleteTech LLC agentic development positioning and guardrails.
 - `scripts/render_email.py` - deterministic template listing and rendering helper.
+- `scripts/render_pdf.py` - branded CompleteTech PDF generator (Markdown -> PDF + optional PNG preview).
+- `requirements.txt` - Python dependencies for branded PDF rendering.
 
 ## Quick Start
 
@@ -72,27 +74,29 @@ Rendered templates are drafts. Replace placeholders with verified prospect, clie
 
 ## Example
 
-![Proposal cover email preview](assets/examples/example.png)
+![Outbound Email Sequence preview](assets/examples/example.png)
 
-Full-document preview converted from generated artifact: [example.md](assets/examples/example.md).
+Full-document **branded PDF** rendered from the generated artifact: [example.pdf](assets/examples/example.pdf). Markdown source: [example.md](assets/examples/example.md).
 
-**Proposal cover email: Pilot scope ready for review**
+**Outbound email sequence: 3-step cold cadence for a support-triage bottleneck**
+
+- Three drafts: cold operations bottleneck, workflow-map follow-up, and breakup.
+- One clear CTA per email; polite opt-out on cold outbound.
+- Drafts only — verify recipient and routing before sending.
+- No fabricated metrics or client names.
+
+Generate the branded PDF (artifacts are delivered as PDFs, not raw Markdown):
 
 ```bash
-python3 scripts/render_email.py \
-  --template proposal-sent \
-  --var prospect_name="Jordan" \
-  --var company="Northstar Support" \
-  --var workflow="support triage pilot" \
-  --var next_step="review the pilot scope and confirm whether the approval gate matches your process" \
-  > assets/examples/example.md
+pip install -r requirements.txt
+# 1) Draft the artifact (optionally start from a catalog template)
+python3 scripts/render_email.py --template cold-operations-bottleneck > assets/examples/example.md
+# 2) Render the branded CompleteTech PDF (+ optional PNG preview)
+python3 scripts/render_pdf.py --markdown assets/examples/example.md \
+  --out assets/examples/example.pdf --png assets/examples/example.png \
+  --logo assets/logo.png --title "Outbound Email Sequence" \
+  --doc-type "EMAIL DRAFTS — VERIFY BEFORE SENDING" --subtitle "Prospect: <b>Northwind Trading Co.</b>" --meta "SEQUENCE=PRO-OUT-014" --meta "STAGE=Cold outreach" --meta "STEPS=3 emails"
 ```
-
-Example draft:
-
-> Subject: Support triage pilot scope for review
->
-> Jordan, I attached the pilot scope for the reviewed support triage workflow. The key design choice is the approval gate: the agent prepares classification notes and reply drafts, but your support lead approves anything customer-facing. If that matches your process, the next step is confirming the sample ticket set and pilot reviewers.
 
 ## Brand Notes
 
