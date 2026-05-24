@@ -9,6 +9,10 @@ description: Create tailored sales, outreach, nurture, follow-up, proposal, obje
 
 Create practical email copy for selling agentic development services end to end: prospecting, qualification, discovery, proposal, contract, closing, kickoff, delivery updates, retention, referrals, and win-back.
 
+## System Boundary
+
+This skill owns email copy and sequences. It may reference artifacts from the other skills, but it does not replace them: use `agentic-discovery-skill` for discovery artifacts, `agentic-proposal-skill` for proposal/SOW content, `agentic-contract-skill` for agreement packages, `agentic-invoice-skill` for invoice documents, `agentic-delivery-skill` for delivery records, `agentic-customer-success-skill` for account state, and `agentic-case-study-skill` for approved proof. Treat every email as a draft unless the user explicitly asks to send and the recipient/routing facts are verified.
+
 ## Core Workflow
 
 1. Identify the stage: cold outreach, warm intro, follow-up, booked meeting, discovery recap, proposal, close, post-sale, retention, referral, or reactivation.
@@ -79,7 +83,7 @@ Choose the email by the job the message must do:
 
 When multiple templates fit, choose the one closest to the buyer's current decision point. For example, do not send a closing email to a prospect who has not agreed there is a workflow worth scoping; use a mapping or discovery email first.
 
-## Recommended Defaults
+## Quality Rules
 
 - Keep cold emails under 120 words unless the user asks for long-form.
 - Lead with a concrete operational problem, not generic AI excitement.

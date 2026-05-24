@@ -2,6 +2,24 @@
 
 A CompleteTech LLC Codex skill for creating agentic development outreach, sales, follow-up, delivery, retention, referral, and win-back emails.
 
+## Workflow Diagram
+
+```mermaid
+flowchart LR
+  A[Audience and stage] --> B[Template or sequence choice]
+  B --> C[Verified trigger, offer, proof, and CTA]
+  C --> D[Draft email]
+  D --> E{Human review needed?}
+  E -->|Yes| F[Revise before sending]
+  E -->|No| G[Ready-to-send copy]
+  classDef source fill:#eef6ff,stroke:#3778c2,color:#102a43;
+  classDef gate fill:#fff7e6,stroke:#c97a12,color:#3d2600;
+  classDef output fill:#eefaf0,stroke:#2f8f46,color:#12351d;
+  class A,B,C source;
+  class E gate;
+  class D,F,G output;
+```
+
 ## What It Does
 
 - Selects the right email for the prospect or client stage.
