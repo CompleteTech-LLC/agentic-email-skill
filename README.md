@@ -76,7 +76,7 @@ Rendered templates are drafts. Replace placeholders with verified prospect, clie
 
 ![Outbound Email Sequence preview](assets/examples/example.png)
 
-Full-document **branded PDF** rendered from the generated artifact: [example.pdf](assets/examples/example.pdf). Markdown source: [example.md](assets/examples/example.md).
+Example files: [Markdown](assets/examples/example.md) · [PDF](assets/examples/example.pdf) · [DOCX](assets/examples/example.docx).
 
 **Outbound email sequence: 3-step cold cadence for a support-triage bottleneck**
 
