@@ -2,7 +2,7 @@
 name: agentic-email-skill
 description: >-
   Create tailored sales, outreach, nurture, follow-up, proposal, objection-handling, closing, onboarding, retention, referral, and win-back emails for agentic development services. Use when Codex needs to draft individual emails or near-complete email sequences that pitch agentic software workflows from first contact through sale and post-sale follow-up.
-version: 1.0.1
+version: 1.0.2
 metadata:
   openclaw:
     skillKey: agentic-email-skill
@@ -12,9 +12,13 @@ metadata:
         - python3
     install:
       - kind: uv
-        package: reportlab>=4.0
+        package: reportlab==4.5.1
       - kind: uv
-        package: pyyaml>=6.0
+        package: pyyaml==6.0.3
+      - kind: uv
+        package: pypdfium2==5.8.0
+      - kind: uv
+        package: pillow==12.2.0
 ---
 
 # Agentic Email Skill
@@ -116,6 +120,12 @@ When multiple templates fit, choose the one closest to the buyer's current decis
 - `references/template-index.json`: machine-readable template metadata used by the renderer.
 - `scripts/render_email.py`: list templates or render a draft with placeholders.
 
+## Runtime Permissions
+
+This skill is a local email-draft and document-rendering workflow. It reads bundled templates, references, examples, `assets/logo.png`, and user-provided Markdown or email variables. It writes only the user-selected `--out`, `--png`, `--markdown-out`, or default `output/` artifact paths. It runs local Python entry points for `scripts/render_email.py` and `scripts/render_pdf.py`.
+
+It does not send email, contact prospects, call mail-provider APIs, require network access, read credentials, create persistence, escalate privileges, perform destructive file operations, or run background services.
+
 ## Renderer
 
 Use the renderer for repeatable output or quick template discovery:
@@ -142,12 +152,8 @@ python3 scripts/render_email.py --template cold-operations-bottleneck \
 
 - `--no-pdf` emits Markdown only (the original behavior); `--no-cover` drops the cover page.
 - Already drafted the Markdown yourself? Render it directly: `python3 scripts/render_pdf.py --markdown artifact.md --out artifact.pdf --logo assets/logo.png --title "..."`.
-- The PDF supports a Markdown subset: `#`/`##`/`###` headings, paragraphs, `-` bullets, tables, `>` callouts, `**bold**`, and `[PAGE_BREAK]`. PDF requires `reportlab`; the optional `--png` preview requires `pypdfium2` and `pillow`. See `assets/examples/` for a rendered example.
+- The PDF supports a Markdown subset: `#`/`##`/`###` headings, paragraphs, `-` bullets, tables, `>` callouts, `**bold**`, and `[PAGE_BREAK]`. PDF requires `reportlab==4.5.1`; the optional `--png` preview requires `pypdfium2==5.8.0` and `pillow==12.2.0`. See `assets/examples/` for a rendered example.
 
-## Certificate Receipt Guidance
+## Network Boundary
 
-The skill remains usable without a classroom key. When certificate credit is needed, use `scripts/request_receipt.py` after the skill run. The shared class key is provided through `CT_CERT_COMPLETION_KEY`, `--completion-key`, or a registry profile; the website claim form receives only the generated receipt code.
-
-Receipt requests include this skill ID: `agentic-email-skill`. The helper sends class/session IDs, the shared key, skill version, generated run ID, optional artifact hash, and metadata to `https://cert.complete.tech/api/skill-runs`. The student claims the certificate at `https://cert.complete.tech/claim` with the returned receipt.
-
-Do not print, store, or commit real classroom completion keys.
+This skill is local-only. It does not include outbound network helpers, callbacks, mail-provider integrations, tracking pixels, or any helper that posts email run metadata to an external service.
