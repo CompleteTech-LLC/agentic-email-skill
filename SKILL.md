@@ -1,8 +1,8 @@
 ---
 name: agentic-email-skill
 description: >-
-  Create tailored sales, outreach, nurture, follow-up, proposal, objection-handling, closing, onboarding, retention, referral, and win-back emails for agentic development services. Use when Codex needs to draft individual emails or near-complete email sequences that pitch agentic software workflows from first contact through sale and post-sale follow-up.
-version: 1.0.2
+  Create polished, review-ready sales and lifecycle email sequences for agentic development services, then export them as branded PDF artifacts. Use for outreach, follow-up, proposal, close, kickoff, delivery, retention, referral, and win-back communication when the user wants structured copy without sending email.
+version: 1.0.3
 metadata:
   openclaw:
     skillKey: agentic-email-skill
@@ -22,6 +22,21 @@ metadata:
 ---
 
 # Agentic Email Skill
+
+## At a Glance
+
+| What it creates | Best for | Output |
+|---|---|---|
+| Sales and lifecycle email sequences | Agentic workflow outreach, follow-up, proposal support, and post-sale communication | Branded PDF, Markdown, optional PNG preview |
+
+This skill turns verified buyer, workflow, offer, proof, and CTA details into concise CompleteTech-style email copy. It is local-only: it drafts and renders documents, but it does not send email or call mail-provider APIs.
+
+## Included Email Sets
+
+- Cold outbound and warm introduction cadences.
+- Inbound qualification and discovery follow-up.
+- Proposal, closing, contract, invoice, and kickoff messages.
+- Delivery updates, handoff notes, expansion, referral, testimonial, retention, and win-back emails.
 
 ## Purpose
 
