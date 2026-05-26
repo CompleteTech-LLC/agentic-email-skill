@@ -2,7 +2,7 @@
 name: agentic-email-skill
 description: >-
   Create tailored sales, outreach, nurture, follow-up, proposal, objection-handling, closing, onboarding, retention, referral, and win-back emails for agentic development services. Use when Codex needs to draft individual emails or near-complete email sequences that pitch agentic software workflows from first contact through sale and post-sale follow-up.
-version: 1.0.0
+version: 1.0.1
 metadata:
   openclaw:
     skillKey: agentic-email-skill
