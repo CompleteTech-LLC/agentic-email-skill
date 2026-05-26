@@ -2,7 +2,7 @@
 name: agentic-email-skill
 description: >-
   Create polished, review-ready sales and lifecycle email sequences for agentic development services, then export them as branded PDF artifacts. Use for outreach, follow-up, proposal, close, kickoff, delivery, retention, referral, and win-back communication when the user wants structured copy without sending email.
-version: 1.0.5
+version: 1.0.6
 metadata:
   openclaw:
     skillKey: agentic-email-skill
@@ -74,59 +74,26 @@ Use this skill when verified buyer, workflow, offer, proof, and CTA details need
 
 ## Email Selection Guide
 
-Choose the email by the job the message must do:
+Choose by current decision point first, then by buyer persona, then by trigger.
 
-- New cold prospect, no prior context: use `cold-problem-pilot` unless a more specific buyer fit applies.
-- Operations leader with manual queue, triage, routing, or handoff pain: use `cold-operations-bottleneck`.
-- CTO, engineering, IT, data, or AI owner: use `cold-technical-evaluation`.
-- Executive worried about AI risk or governance: use `cold-executive-risk`.
-- Sales leader or revenue operations: use `cold-revenue-team`.
-- Support, customer success, or service desk leader: use `cold-support-team`.
-- Knowledge management, internal ops, or scattered documentation pain: use `cold-ops-knowledge`.
-- Founder or small team: use `cold-founders`.
-- First follow-up after cold email: use `followup-workflow-map`.
-- Follow-up when risk, approvals, or control are the likely concern: use `followup-risk-controls`.
-- Follow-up that needs a concrete example: use `followup-example`.
-- Follow-up when the prospect may think the project is too large: use `followup-proofless-value`.
-- Follow-up when you need a short diagnostic reply: use `followup-breakthrough-question`.
-- Last cold follow-up: use `breakup-close-loop`.
-- Referred prospect: use `warm-intro-context`, then `warm-intro-workflow`.
-- Inbound lead: use `inbound-fast-response`, then `inbound-qualification`, then `inbound-booking`.
-- Before discovery: use `discovery-confirm-agenda`.
-- After discovery: use `post-discovery-recap`.
-- Before a formal proposal: use `proposal-preview`.
-- Sending a proposal: use `proposal-sent`.
-- Proposal follow-up: use `proposal-followup-questions`.
-- Budget objection: use `close-objection-budget`.
-- Risk, compliance, or autonomy objection: use `close-objection-risk`.
-- Timing objection: use `close-objection-timing`.
-- "We may build internally" objection: use `close-objection-internal-team`.
-- Summarizing the close: use `close-decision-summary`.
-- Final decision nudge: use `close-final-nudge`.
-- Sending contract: use `contract-sent`.
-- Contract questions: use `contract-clarifications`.
-- Invoice or deposit: use `deposit-invoice`.
-- Waiting on signature: use `signature-reminder`.
-- After signature: use `kickoff-after-signature`.
-- Kickoff logistics: use `kickoff-agenda`.
-- Need docs, access, sandbox, or examples: use `access-request`.
-- During delivery: use `weekly-update`.
-- Prototype ready: use `review-ready`.
-- Acceptance review: use `acceptance-request`.
-- Handoff complete: use `handoff-complete`.
-- Expanding to another workflow: use `expansion-next-workflow`.
-- Asking for referral: use `referral-request`.
-- Asking for testimonial: use `testimonial-request`.
-- Post-project check-in: use `quarterly-checkin`.
-- Lost or stale opportunity with new reason to reconnect: use `winback-new-trigger`.
-- Hiring trigger: use `trigger-hiring`.
-- New tool, platform, migration, or integration trigger: use `trigger-new-tool`.
-- Growth, funding, new location, new team, or volume spike trigger: use `trigger-growth`.
-- Educational nurture with no immediate ask: use `nurture-educational`.
-- Smaller advisory offer: use `nurture-one-page-offer`.
-- Old opportunity without a specific new trigger: use `reengage-old-opportunity`.
+| Decision Point | Templates |
+|---|---|
+| Cold outbound | `cold-problem-pilot`, `cold-operations-bottleneck`, `cold-technical-evaluation`, `cold-executive-risk`, `cold-revenue-team`, `cold-support-team`, `cold-ops-knowledge`, `cold-founders` |
+| Cold follow-up | `followup-workflow-map`, `followup-risk-controls`, `followup-example`, `followup-proofless-value`, `followup-breakthrough-question`, `breakup-close-loop` |
+| Warm or inbound | `warm-intro-context`, `warm-intro-workflow`, `inbound-fast-response`, `inbound-qualification`, `inbound-booking` |
+| Discovery and proposal | `discovery-confirm-agenda`, `post-discovery-recap`, `proposal-preview`, `proposal-sent`, `proposal-followup-questions` |
+| Closing and objections | `close-objection-budget`, `close-objection-risk`, `close-objection-timing`, `close-objection-internal-team`, `close-decision-summary`, `close-final-nudge` |
+| Contract and payment | `contract-sent`, `contract-clarifications`, `deposit-invoice`, `signature-reminder` |
+| Kickoff and delivery | `kickoff-after-signature`, `kickoff-agenda`, `access-request`, `weekly-update`, `review-ready`, `acceptance-request`, `handoff-complete` |
+| Expansion and proof | `expansion-next-workflow`, `referral-request`, `testimonial-request`, `quarterly-checkin`, `winback-new-trigger` |
+| Trigger and nurture | `trigger-hiring`, `trigger-new-tool`, `trigger-growth`, `nurture-educational`, `nurture-one-page-offer`, `reengage-old-opportunity` |
 
-When multiple templates fit, choose the one closest to the buyer's current decision point. For example, do not send a closing email to a prospect who has not agreed there is a workflow worth scoping; use a mapping or discovery email first.
+| Selection Rule | Guidance |
+|---|---|
+| Buyer has not agreed to a problem | Stay in cold, follow-up, warm intro, inbound, or discovery. |
+| Buyer has agreed to scoped work | Move to proposal, closing, contract, or payment. |
+| Project is signed | Use kickoff, delivery, acceptance, handoff, support, or expansion. |
+| Several templates fit | Pick the one closest to the buyer's current decision point. |
 
 ## Quality Rules
 
