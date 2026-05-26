@@ -2,7 +2,7 @@
 name: agentic-email-skill
 description: >-
   Create polished, review-ready sales and lifecycle email sequences for agentic development services, then export them as branded PDF artifacts. Use for outreach, follow-up, proposal, close, kickoff, delivery, retention, referral, and win-back communication when the user wants structured copy without sending email.
-version: 1.0.4
+version: 1.0.5
 metadata:
   openclaw:
     skillKey: agentic-email-skill
@@ -55,17 +55,22 @@ Use this skill when verified buyer, workflow, offer, proof, and CTA details need
 
 ## Core Workflow
 
-1. Identify the stage: cold outreach, warm intro, follow-up, booked meeting, discovery recap, proposal, close, post-sale, retention, referral, or reactivation.
-2. Gather only the facts needed for the stage:
-   - buyer name, company, role, industry
-   - observed trigger or business pain
-   - agentic workflow being pitched
-   - proof, constraints, offer, CTA, and timing
-3. Use the positioning in `references/positioning.md` for the service promise, risk controls, and language to avoid.
-4. Use `references/email-catalog.md` when the user asks for a near-exhaustive library, a multi-step sequence, or a specific stage template.
-5. Use `references/sequence-blueprints.md` when designing an outreach or sales cadence.
-6. Draft in the requested voice, or default to concise, plain, consultative, and specific.
-7. Include subject lines when useful. Do not fabricate case studies, client names, metrics, legal claims, or regulated-use assurances.
+| Step | Action |
+|---|---|
+| 1 | Identify the stage: cold outreach, warm intro, follow-up, booked meeting, discovery recap, proposal, close, post-sale, retention, referral, or reactivation. |
+| 2 | Gather only the facts needed for that stage. |
+| 3 | Use `references/positioning.md` for service promise, risk controls, and language to avoid. |
+| 4 | Use `references/email-catalog.md` for template selection, multi-step sequences, or near-exhaustive libraries. |
+| 5 | Use `references/sequence-blueprints.md` for outreach and sales cadence design. |
+| 6 | Draft in the requested voice, or default to concise, plain, consultative, and specific. |
+| 7 | Include subject lines when useful and avoid unsupported claims. |
+
+| Needed Fact | Examples |
+|---|---|
+| Buyer context | Name, company, role, industry. |
+| Trigger | Observed change, operational pain, buying signal, or business problem. |
+| Workflow | Agentic workflow being pitched or supported. |
+| Message inputs | Proof, constraints, offer, CTA, timing, and tone. |
 
 ## Email Selection Guide
 
