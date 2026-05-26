@@ -2,7 +2,7 @@
 name: agentic-email-skill
 description: >-
   Create polished, review-ready sales and lifecycle email sequences for agentic development services, then export them as branded PDF artifacts. Use for outreach, follow-up, proposal, close, kickoff, delivery, retention, referral, and win-back communication when the user wants structured copy without sending email.
-version: 1.0.7
+version: 1.0.8
 metadata:
   openclaw:
     skillKey: agentic-email-skill
@@ -120,9 +120,18 @@ Choose by current decision point first, then by buyer persona, then by trigger.
 
 ## Runtime Permissions
 
-This skill is a local email-draft and document-rendering workflow. It reads bundled templates, references, examples, `assets/logo.png`, and user-provided Markdown or email variables. It writes only the user-selected `--out`, `--png`, `--markdown-out`, or default `output/` artifact paths. It runs local Python entry points for `scripts/render_email.py` and `scripts/render_pdf.py`.
+| Area | Runtime behavior |
+|---|---|
+| Execution | Runs local Python entry points: `scripts/render_email.py` and `scripts/render_pdf.py`. |
+| Reads | Bundled templates, references, examples, `assets/logo.png`, and user-provided Markdown or email variables. |
+| Writes | Only user-selected `--out`, `--png`, `--markdown-out`, or default `output/` artifact paths. |
+| Network | Not required and not used for email drafting or document rendering. |
 
-It does not send email, contact prospects, call mail-provider APIs, require network access, read credentials, create persistence, escalate privileges, perform destructive file operations, or run background services.
+| Not Included | Boundary |
+|---|---|
+| Email delivery | Does not send email, contact prospects, call mail-provider APIs, add tracking pixels, or approve outreach. |
+| Credentials | Does not read mail credentials, API keys, browser sessions, or CRM tokens. |
+| System changes | Does not create persistence, escalate privileges, run background services, or perform destructive file operations. |
 
 ## Renderer
 
