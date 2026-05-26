@@ -2,7 +2,7 @@
 name: agentic-email-skill
 description: >-
   Create polished, review-ready sales and lifecycle email sequences for agentic development services, then export them as branded PDF artifacts. Use for outreach, follow-up, proposal, close, kickoff, delivery, retention, referral, and win-back communication when the user wants structured copy without sending email.
-version: 1.0.6
+version: 1.0.7
 metadata:
   openclaw:
     skillKey: agentic-email-skill
@@ -97,22 +97,26 @@ Choose by current decision point first, then by buyer persona, then by trigger.
 
 ## Quality Rules
 
-- Keep cold emails under 120 words unless the user asks for long-form.
-- Lead with a concrete operational problem, not generic AI excitement.
-- Pitch agentic development as workflow design, implementation, evaluation, monitoring, and human approval gates.
-- Use one clear CTA per email.
-- Make follow-ups additive: new angle, artifact, risk reducer, example workflow, or decision prompt.
-- Include a polite opt-out line for cold outbound when appropriate.
-- For regulated or high-risk sectors, emphasize review, approvals, logs, and scoped pilots. Do not imply autonomous production decisions.
+| Rule | Requirement |
+|---|---|
+| Length | Keep cold emails under 120 words unless the user asks for long-form. |
+| Opening | Lead with a concrete operational problem, not generic AI excitement. |
+| Positioning | Present agentic development as workflow design, implementation, evaluation, monitoring, and human approval gates. |
+| CTA | Use one clear CTA per email. |
+| Follow-ups | Add a new angle, artifact, risk reducer, example workflow, or decision prompt. |
+| Cold outbound | Include a polite opt-out line when appropriate. |
+| High-risk sectors | Emphasize review, approvals, logs, and scoped pilots; do not imply autonomous production decisions. |
 
 ## Resource Guide
 
-- `references/positioning.md`: load for offer framing, buyer pains, differentiators, proof rules, and compliance guardrails.
-- `references/use-case-decision-table.md`: load when deciding which template fits a specific use case.
-- `references/sequence-blueprints.md`: load for recommended cadences across cold outbound, warm outbound, inbound, proposal, closing, and post-sale.
-- `references/email-catalog.md`: load for the near-exhaustive template library by stage.
-- `references/template-index.json`: machine-readable template metadata used by the renderer.
-- `scripts/render_email.py`: list templates or render a draft with placeholders.
+| Resource | Role |
+|---|---|
+| `references/positioning.md` | Offer framing, buyer pains, differentiators, proof rules, and compliance guardrails. |
+| `references/use-case-decision-table.md` | Template selection for a specific use case. |
+| `references/sequence-blueprints.md` | Recommended cadences across cold outbound, warm outbound, inbound, proposal, closing, and post-sale. |
+| `references/email-catalog.md` | Near-exhaustive template library by stage. |
+| `references/template-index.json` | Machine-readable template metadata used by the renderer. |
+| `scripts/render_email.py` | Lists templates or renders a draft with placeholders. |
 
 ## Runtime Permissions
 
