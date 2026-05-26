@@ -24,6 +24,9 @@ Part of the CompleteTech LLC agentic services skill library. This skill drafts m
 
 ## Workflow Diagram
 
+Source: [assets/diagrams/workflow.mmd](assets/diagrams/workflow.mmd).
+
+
 ```mermaid
 flowchart LR
   A[Audience and stage] --> B[Template or sequence choice]
