@@ -13,7 +13,7 @@ Part of the CompleteTech LLC agentic services skill library. This skill drafts m
 ## OpenClaw / ClawHub Metadata
 
 - Skill key: `agentic-email-skill`
-- Version-ready metadata: `1.0.3`
+- Version-ready metadata: `1.0.4`
 - Homepage: https://github.com/CompleteTech-LLC/agentic-email-skill
 - README: https://github.com/CompleteTech-LLC/agentic-email-skill#readme
 - Runtime binaries: `python3`

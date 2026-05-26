@@ -2,7 +2,7 @@
 name: agentic-email-skill
 description: >-
   Create polished, review-ready sales and lifecycle email sequences for agentic development services, then export them as branded PDF artifacts. Use for outreach, follow-up, proposal, close, kickoff, delivery, retention, referral, and win-back communication when the user wants structured copy without sending email.
-version: 1.0.3
+version: 1.0.4
 metadata:
   openclaw:
     skillKey: agentic-email-skill
@@ -33,18 +33,25 @@ This skill turns verified buyer, workflow, offer, proof, and CTA details into co
 
 ## Included Email Sets
 
-- Cold outbound and warm introduction cadences.
-- Inbound qualification and discovery follow-up.
-- Proposal, closing, contract, invoice, and kickoff messages.
-- Delivery updates, handoff notes, expansion, referral, testimonial, retention, and win-back emails.
+| Set | Covers |
+|---|---|
+| Outbound | Cold outreach, warm introductions, first follow-ups, examples, risk-control follow-ups, and breakups. |
+| Discovery | Inbound response, qualification, booking, agenda confirmation, and post-discovery recap. |
+| Sales motion | Proposal preview, proposal send, objections, close summaries, contract messages, invoice/deposit notes, and kickoff. |
+| Post-sale | Delivery updates, review requests, handoff, expansion, referral, testimonial, retention, win-back, and nurture. |
 
-## Purpose
+## Use When
 
-Create practical email copy for selling agentic development services end to end: prospecting, qualification, discovery, proposal, contract, closing, kickoff, delivery updates, retention, referrals, and win-back.
+Use this skill when verified buyer, workflow, offer, proof, and CTA details need to become polished email copy or a branded PDF email-sequence artifact.
 
-## System Boundary
+## Boundaries
 
-This skill owns email copy and sequences. It may reference artifacts from the other skills, but it does not replace them: use `agentic-discovery-skill` for discovery artifacts, `agentic-proposal-skill` for proposal/SOW content, `agentic-contract-skill` for agreement packages, `agentic-invoice-skill` for invoice documents, `agentic-delivery-skill` for delivery records, `agentic-customer-success-skill` for account state, and `agentic-case-study-skill` for approved proof. Treat every email as a draft unless the user explicitly asks to send and the recipient/routing facts are verified.
+| This skill does | This skill does not |
+|---|---|
+| Draft email copy and email sequences. | Send email or call mail-provider APIs. |
+| Render branded PDF/Markdown artifacts. | Replace proposal, contract, invoice, delivery, customer-success, or proof artifacts. |
+| Use verified facts from other skills as context. | Invent client proof, recipient authority, metrics, legal claims, or regulated-use assurances. |
+| Keep messages review-ready and scoped. | Approve external sending or bypass recipient/routing verification. |
 
 ## Core Workflow
 
