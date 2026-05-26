@@ -13,7 +13,7 @@ Part of the CompleteTech LLC agentic services skill library. This skill drafts m
 ## OpenClaw / ClawHub Metadata
 
 - Skill key: `agentic-email-skill`
-- Version-ready metadata: `1.0.8`
+- Version-ready metadata: `1.0.9`
 - Homepage: https://github.com/CompleteTech-LLC/agentic-email-skill
 - README: https://github.com/CompleteTech-LLC/agentic-email-skill#readme
 - Runtime binaries: `python3`
@@ -99,7 +99,13 @@ python3 scripts/render_email.py --template cold-operations-bottleneck \
   --subtitle "Prospect: <b>Northwind Trading Co.</b>" --meta "SEQUENCE=PRO-OUT-014" --meta "STAGE=Cold outreach"
 ```
 
-The committed `example.{md,pdf,png}` use curated, realistic demonstration data for the Northwind Trading Co. support-triage pilot; pass `--var key=value` to fill template placeholders with your own facts.
+| Example artifact | Path |
+|---|---|
+| Markdown source | `assets/examples/example.md` |
+| Branded PDF | `assets/examples/example.pdf` |
+| PNG preview | `assets/examples/example.png` |
+
+The committed example artifacts use curated, realistic demonstration data for the Northwind Trading Co. support-triage pilot. Pass `--var key=value` to fill template placeholders with your own facts.
 
 ## Brand Notes
 

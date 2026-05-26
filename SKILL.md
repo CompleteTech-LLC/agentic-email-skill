@@ -2,7 +2,7 @@
 name: agentic-email-skill
 description: >-
   Create polished, review-ready sales and lifecycle email sequences for agentic development services, then export them as branded PDF artifacts. Use for outreach, follow-up, proposal, close, kickoff, delivery, retention, referral, and win-back communication when the user wants structured copy without sending email.
-version: 1.0.8
+version: 1.0.9
 metadata:
   openclaw:
     skillKey: agentic-email-skill
@@ -146,7 +146,7 @@ If a user needs polished, context-aware copy, use the references and rewrite the
 
 ## Rendering to a Branded PDF
 
-Artifacts from this skill are delivered as branded CompleteTech LLC **PDF** documents, not raw Markdown. The renderer emits the PDF (and prints the Markdown) in **one command**, using the same reportlab branding engine as the contract skill:
+Artifacts from this skill are delivered as branded CompleteTech LLC **PDF** documents. The email renderer can emit PDF, Markdown, and optional PNG preview in one local command:
 
 ```bash
 pip install -r requirements.txt
@@ -157,9 +157,21 @@ python3 scripts/render_email.py --template cold-operations-bottleneck \
   --var client_name="Client Name" --var workflow="support triage"
 ```
 
-- `--no-pdf` emits Markdown only (the original behavior); `--no-cover` drops the cover page.
-- Already drafted the Markdown yourself? Render it directly: `python3 scripts/render_pdf.py --markdown artifact.md --out artifact.pdf --logo assets/logo.png --title "..."`.
-- The PDF supports a Markdown subset: `#`/`##`/`###` headings, paragraphs, `-` bullets, tables, `>` callouts, `**bold**`, and `[PAGE_BREAK]`. PDF requires `reportlab==4.5.1`; the optional `--png` preview requires `pypdfium2==5.8.0` and `pillow==12.2.0`. See `assets/examples/` for a rendered example.
+| Output Need | Use |
+|---|---|
+| Branded PDF | `--out artifact.pdf` |
+| PNG preview | `--png artifact.png` |
+| Markdown source | `--markdown-out artifact.md` |
+| Markdown only | `--no-pdf` |
+| No cover page | `--no-cover` |
+| Existing Markdown to PDF | `python3 scripts/render_pdf.py --markdown artifact.md --out artifact.pdf --logo assets/logo.png --title "..."` |
+
+| Rendering Support | Details |
+|---|---|
+| Markdown subset | `#`, `##`, `###`, paragraphs, `-` bullets, tables, `>` callouts, `**bold**`, and `[PAGE_BREAK]`. |
+| Required package | `reportlab==4.5.1` for PDF rendering. |
+| Optional preview packages | `pypdfium2==5.8.0` and `pillow==12.2.0` for `--png`. |
+| Example output | See `assets/examples/` for rendered Markdown, PDF, and PNG artifacts. |
 
 ## Network Boundary
 
