@@ -3,7 +3,10 @@
 # Agentic Email Skill
 
 <p align="center">
-  <img src="assets/logo.png" alt="CompleteTech LLC logo" width="260">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.png">
+    <img src="assets/logo.png" alt="CompleteTech LLC logo" width="260">
+  </picture>
 </p>
 
 A CompleteTech LLC Codex skill for creating agentic development outreach, sales, follow-up, delivery, retention, referral, and win-back emails.
